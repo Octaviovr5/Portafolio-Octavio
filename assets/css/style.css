@@ -375,6 +375,14 @@ html, body {
     position: relative;
 }
 
+/* Solo para dispositivos móviles */
+@media (max-width: 768px) {
+    .portfolio-item img {
+        border-radius: 10px; /* Redondear las esquinas */
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.8); /* Borde difuso con sombra */
+    }
+}
+
 .section-portfolio .col-md-4:nth-last-child(-n+3) .portfolio-item {
     margin-bottom: 0;
 }
