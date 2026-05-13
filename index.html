@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+
+  <!-- ── META ──────────────────────────────────────────────── -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Octavio Velazquez — Arquitectura + Tecnología</title>
+  <meta name="description" content="Estudiante de Arquitectura y Desarrollador Web Front-End en CDMX. Diseño arquitectónico y herramientas digitales para comunicar proyectos.">
+  <meta name="author"      content="Octavio Velazquez Ramirez">
+  <meta name="keywords"    content="Arquitectura, desarrollo web, front-end, CDMX, portafolio, software, IVOX">
+
+  <!-- Open Graph -->
+  <meta property="og:title"       content="Octavio Velazquez — Arquitectura + Tecnología">
+  <meta property="og:description" content="Diseño arquitectónico y herramientas digitales para comunicar proyectos.">
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://octaviovr5.github.io/Portafolio-Octavio/">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Octavio Velázquez — Arquitectura + Tecnología">
+  <meta name="twitter:description" content="Diseño arquitectónico y herramientas digitales para comunicar proyectos.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+
+  <!-- Fuentes (preconnect para velocidad) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+  <!-- ── CURSOR PERSONALIZADO ────────────────────────────────── -->
+  <!-- Crosshair tipo CAD que sigue el mouse con lag suave -->
+  <div id="cursor"     aria-hidden="true"></div>
+  <div id="cursor-dot" aria-hidden="true"></div>
+
+
+  <!-- ================================================================
+       NAVEGACIÓN
+  ================================================================ -->
+  <header id="nav" role="banner">
+
+    <!-- Logo / nombre -->
+    <a href="#hero" class="nav-logo" aria-label="Ir al inicio">
+      OV<span>.</span>
+    </a>
+
+    <!-- Links escritorio -->
+    <nav class="nav-links" aria-label="Navegación principal">
+      <a href="#enfoque">Enfoque</a>
+      <a href="#arquitectura">Arquitectura</a>
+      <a href="#web">Web</a>
+      <a href="#simulador">Simulador</a>
+      <a href="#sobre">Sobre mí</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+
+    <div style="display:flex;align-items:center;gap:14px;">
+      <!-- Toggle de tema claro / oscuro -->
+      <button id="theme-toggle" aria-label="Cambiar tema" title="Cambiar tema"></button>
+      <!-- Hamburger mobile -->
+      <button class="nav-hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+  </header>
+
+
+  <!-- ================================================================
+       SECCIÓN 1 — HERO
+       Pantalla completa con título principal y presentación breve.
+  ================================================================ -->
+  <section id="hero" aria-label="Presentación">
+
+    <!-- Fondo de grilla tipo CAD -->
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+
+    <!-- Número decorativo grande -->
+    <div class="hero-numeral" aria-hidden="true">OV</div>
+
+    <!-- Contenido principal del hero -->
+    <div class="hero-inner">
+
+      <p class="hero-tag">Ciudad de México &nbsp;·&nbsp; Arquitectura &amp; Tecnología</p>
+
+      <h1 class="hero-title">
+        Arquitectura<br>
+        + <em>Tecnología</em>
+      </h1>
+
+      <p class="hero-subtitle">
+        Diseño arquitectónico y herramientas digitales<br>para comunicar proyectos.
+      </p>
+
+      <p class="hero-desc">
+        Soy estudiante de ultimo cuatrimestre de arquitectura con formación en desarrollo web.
+        Me interesa el futuro digital de los despachos y cómo la tecnología
+        puede mejorar la comunicación de proyectos, servicios y procesos.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#explora" class="btn-primary">
+          <span>Ver mi trabajo</span>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.2"/>
+          </svg>
+        </a>
+        <a href="#contacto" class="btn-ghost">Contacto</a>
+      </div>
+
+    </div><!-- /hero-inner -->
+
+    <!-- Indicador de scroll -->
+    <div class="hero-scroll" aria-hidden="true">
+      <div class="hero-scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+
+  </section><!-- /hero -->
+
+
+  <!-- ================================================================
+       SECCIÓN 2 — ENFOQUE
+       Editorial, tipo revista. Explica el perfil híbrido.
+  ================================================================ -->
+  <section id="enfoque" aria-label="Enfoque profesional">
+    <div class="container">
+
+      <!-- Texto de fondo decorativo -->
+      <div class="enfoque-bg-text" aria-hidden="true">Digital</div>
+
+      <div class="enfoque-grid">
+
+        <!-- Columna izquierda: Eyebrow + texto -->
+        <div class="enfoque-label-col reveal">
+          <p class="eyebrow">Arquitectura en la era digital</p>
+          <h2 class="enfoque-main-title">
+            La arquitectura ya no solo<br>
+            se diseña,<br>
+            también se <em>comunica.</em>
+          </h2>
+          <p class="enfoque-body">
+            Me interesa crear herramientas digitales, páginas web y contenido
+            que ayuden a presentar proyectos arquitectónicos de forma clara,
+            visual y accesible.
+          </p>
+          <p class="enfoque-body">
+            La convergencia entre diseño espacial y tecnología es el territorio
+            donde encuentro mis mejores ideas.
+          </p>
+        </div>
+
+        <!-- Columna derecha: Tres pilares -->
+        <div class="reveal reveal-delay-2">
+          <p class="eyebrow" style="margin-bottom:1.5rem;">Mis tres ejes</p>
+          <div class="enfoque-pillars">
+
+            <div class="enfoque-pillar">
+              <span class="enfoque-pillar-num">01</span>
+              <div class="enfoque-pillar-content">
+                <h4>Diseño arquitectónico</h4>
+                <p>Formación académica en arquitectura civil, diseño de proyectos educativos, habitacionales y de salud.</p>
+              </div>
+            </div>
+
+            <div class="enfoque-pillar">
+              <span class="enfoque-pillar-num">02</span>
+              <div class="enfoque-pillar-content">
+                <h4>Comunicación digital</h4>
+                <p>Desarrollo web, redacción técnica y herramientas para presentar proyectos a clientes, concursos y comités.</p>
+              </div>
+            </div>
+
+            <div class="enfoque-pillar">
+              <span class="enfoque-pillar-num">03</span>
+              <div class="enfoque-pillar-content">
+                <h4>Tecnología aplicada</h4>
+                <p>Recorridos virtuales WebXR, simuladores estructurales y calculadoras para ingeniería civil y arquitectura.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div><!-- /enfoque-grid -->
+    </div>
+  </section><!-- /enfoque -->
+
+
+  <!-- ================================================================
+       SECCIÓN 3 — EXPLORACIÓN
+       Dos tarjetas grandes que llevan a cada área de trabajo.
+  ================================================================ -->
+  <section id="explora" aria-label="Áreas de trabajo">
+    <div class="container">
+
+      <div class="explora-header reveal">
+        <p class="eyebrow">Explora mi trabajo</p>
+        <h2>Dos mundos,<br>una sola visión.</h2>
+      </div>
+
+      <div class="explora-cards reveal reveal-delay-1">
+
+        <!-- Tarjeta Arquitectura -->
+        <a href="#arquitectura" class="explora-card" aria-label="Ver proyectos de arquitectura">
+          <span class="explora-card-num">01 / 02</span>
+          <span class="explora-card-icon" aria-hidden="true">⬡</span>
+          <h3>Arquitectura</h3>
+          <p>Proyectos académicos y conceptuales que exploran el espacio, la función y el contexto urbano.</p>
+          <span class="explora-card-arrow">
+            Ver proyectos
+            <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
+              <path d="M0 5h13M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.2"/>
+            </svg>
+          </span>
+        </a>
+
+        <!-- Tarjeta Desarrollo Web -->
+        <a href="#web" class="explora-card" aria-label="Ver proyectos digitales">
+          <span class="explora-card-num">02 / 02</span>
+          <span class="explora-card-icon" aria-hidden="true">⬡</span>
+          <h3>Desarrollo<br>Web</h3>
+          <p>Proyectos y soluciones digitales: sitios corporativos, herramientas interactivas y recorridos virtuales.</p>
+          <span class="explora-card-arrow">
+            Ver proyectos
+            <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
+              <path d="M0 5h13M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.2"/>
+            </svg>
+          </span>
+        </a>
+
+      </div>
+    </div>
+  </section><!-- /explora -->
+
+
+  <!-- ================================================================
+       SECCIÓN 4 — PROCESO DE TRABAJO (Añadida)
+  ================================================================ -->
+  <section id="proceso" aria-label="Proceso de trabajo">
+    <div class="container">
+      <div class="proceso-header reveal">
+        <p class="eyebrow">Cómo trabajo</p>
+      </div>
+      <div class="proceso-steps reveal reveal-delay-1">
+
+        <div class="proceso-step">
+          <div class="proceso-step-num">01</div>
+          <h4>Concepto</h4>
+          <p>Entender el problema. Qué se necesita comunicar, a quién y con qué medios.</p>
+        </div>
+
+        <div class="proceso-step">
+          <div class="proceso-step-num">02</div>
+          <h4>Diseño</h4>
+          <p>Boceto, estructura y jerarquía visual. La forma sigue a la función, siempre.</p>
+        </div>
+
+        <div class="proceso-step">
+          <div class="proceso-step-num">03</div>
+          <h4>Desarrollo</h4>
+          <p>Código limpio y escalable, o documentación técnica detallada según el proyecto.</p>
+        </div>
+
+        <div class="proceso-step">
+          <div class="proceso-step-num">04</div>
+          <h4>Entrega</h4>
+          <p>Publicación, presentación y soporte. El proyecto no termina hasta que funciona.</p>
+        </div>
+
+      </div>
+    </div>
+  </section><!-- /proceso -->
+
+
+  <!-- ================================================================
+       SECCIÓN 5 — ARQUITECTURA
+       Cuatro proyectos académicos con placeholders para contenido real.
+  ================================================================ -->
+  <section id="arquitectura" aria-label="Proyectos de arquitectura">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <div class="section-header-left">
+          <p class="eyebrow">Arquitectura académica</p>
+          <h2>Proyectos de<br>Arquitectura</h2>
+          <p>Proyectos académicos desarrollados durante mi formación como arquitecto. Diseño espacial, análisis de contexto y propuesta técnica.</p>
+        </div>
+        <p class="eyebrow" style="align-self:flex-end;">4 proyectos</p>
+      </div>
+
+      <div class="arq-grid">
+
+        <!-- ── PROYECTO DESTACADO: Escuela ──────────────────────── -->
+        <!-- Para agregar imagen real: reemplaza .img-placeholder con <img src="img/projects/escuela/hero.jpg" alt="..."> -->
+        <article class="arq-project featured reveal">
+
+          <div class="arq-project-img">
+            <div class="img-placeholder">
+              <div class="img-placeholder-inner">
+                <!-- Ícono de plano arquitectónico -->
+                <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+                  <rect x="8" y="8" width="48" height="48" stroke="currentColor" stroke-width="1"/>
+                  <line x1="8" y1="28" x2="56" y2="28" stroke="currentColor" stroke-width="1"/>
+                  <line x1="28" y1="8" x2="28" y2="56" stroke="currentColor" stroke-width="1"/>
+                  <rect x="14" y="14" width="8" height="8" stroke="currentColor" stroke-width="0.8"/>
+                  <rect x="34" y="34" width="16" height="16" stroke="currentColor" stroke-width="0.8"/>
+                </svg>
+                <span>Imagen del proyecto</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="arq-project-info">
+            <div>
+              <div class="arq-project-meta">
+                <span class="arq-project-index">01 / 04</span>
+                <span class="arq-project-tag">Educación</span>
+              </div>
+              <h3 class="arq-project-title">Colegio OTA</h3>
+              <p class="arq-project-subtitle">
+                Escuela privada de tres niveles educativos (Kinder, Primaria, Secundaria)
+                en CDMX. El proyecto integra un desnivel de 0 a −6.5 m como elemento
+                organizador del espacio, con losas nervadas y áreas especializadas.
+              </p>
+              <!-- Galería de imágenes placeholder -->
+              <!-- Reemplazar divs por <img> cuando tengas las fotos del proyecto -->
+              <div class="arq-gallery-placeholder">
+                <div class="gallery-thumb" title="Imagen de galería — reemplazar"></div>
+                <div class="gallery-thumb" title="Imagen de galería — reemplazar"></div>
+                <div class="gallery-thumb" title="Imagen de galería — reemplazar"></div>
+              </div>
+            </div>
+            <div class="arq-project-details">
+              <div class="arq-detail"><strong>Tipo</strong>Escuela privada</div>
+              <div class="arq-detail"><strong>Ubicación</strong>CDMX</div>
+              <div class="arq-detail"><strong>Programa</strong>Kinder + Primaria + Secundaria</div>
+              <div class="arq-detail"><strong>Estructura</strong>Losas nervadas</div>
+            </div>
+          </div>
+
+        </article><!-- /escuela -->
+
+        <!-- ── PROYECTO 2: Clínica ────────────────────────────── -->
+        <article class="arq-project reveal reveal-delay-1">
+          <div class="arq-project-img">
+            <div class="img-placeholder">
+              <div class="img-placeholder-inner">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                  <rect x="6" y="6" width="36" height="36" stroke="currentColor" stroke-width="1"/>
+                  <line x1="24" y1="14" x2="24" y2="34" stroke="currentColor" stroke-width="2"/>
+                  <line x1="14" y1="24" x2="34" y2="24" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <span>Imagen del proyecto</span>
+              </div>
+            </div>
+          </div>
+          <div class="arq-project-info">
+            <div>
+              <div class="arq-project-meta">
+                <span class="arq-project-index">02 / 04</span>
+                <span class="arq-project-tag">Salud</span>
+              </div>
+              <h3 class="arq-project-title">UMF ISSSTE</h3>
+              <p class="arq-project-subtitle">
+                Unidad Médica Familiar con flujos de atención optimizados, accesibilidad
+                universal y diseño eficiente. Incluye recorrido virtual WebXR para
+                presentación ante comités institucionales.
+              </p>
+            </div>
+            <div class="arq-project-details">
+              <div class="arq-detail"><strong>Tipo</strong>Clínica</div>
+              <div class="arq-detail"><strong>Énfasis</strong>Accesibilidad</div>
+            </div>
+          </div>
+        </article><!-- /clinica -->
+
+        <!-- ── PROYECTO 3: Biblioteca (placeholder) ──────────── -->
+        <article class="arq-project reveal reveal-delay-2">
+          <div class="arq-project-img">
+            <div class="img-placeholder">
+              <div class="img-placeholder-inner">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                  <rect x="6" y="10" width="7" height="28" stroke="currentColor" stroke-width="1"/>
+                  <rect x="15" y="10" width="7" height="28" stroke="currentColor" stroke-width="1"/>
+                  <rect x="24" y="10" width="7" height="28" stroke="currentColor" stroke-width="1"/>
+                  <rect x="33" y="10" width="9" height="28" stroke="currentColor" stroke-width="1"/>
+                  <line x1="6" y1="38" x2="42" y2="38" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+                <span>Imagen del proyecto</span>
+              </div>
+            </div>
+          </div>
+          <div class="arq-project-info">
+            <div>
+              <div class="arq-project-meta">
+                <span class="arq-project-index">03 / 04</span>
+                <span class="arq-project-tag">Cultural</span>
+              </div>
+              <h3 class="arq-project-title">Biblioteca</h3>
+              <p class="arq-project-subtitle">
+                Espacio de conocimiento y comunidad.
+                Diseño orientado a la luz natural, la circulación fluida
+                y la integración con el espacio público.
+              </p>
+              <!-- PLACEHOLDER: Texto del proyecto — editar con contenido real -->
+              <div class="project-text-section">
+                <div class="project-text-grid">
+                  <span class="project-text-label">Concepto</span>
+                  <div class="project-text-content">
+                    <p>[Describe aquí el concepto arquitectónico del proyecto: qué problema resuelve, qué ideas guiaron el diseño y qué lo hace particular.]</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="arq-project-details">
+              <div class="arq-detail"><strong>Tipo</strong>Equipamiento cultural</div>
+              <div class="arq-detail"><strong>Énfasis</strong>Espacio público</div>
+            </div>
+          </div>
+        </article><!-- /biblioteca -->
+
+        <!-- ── PROYECTO 4: Hacienda (placeholder) ────────────── -->
+        <article class="arq-project reveal reveal-delay-3">
+          <div class="arq-project-img">
+            <div class="img-placeholder">
+              <div class="img-placeholder-inner">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                  <polygon points="24,6 42,22 42,42 6,42 6,22" stroke="currentColor" stroke-width="1" fill="none"/>
+                  <rect x="18" y="28" width="12" height="14" stroke="currentColor" stroke-width="1"/>
+                  <line x1="24" y1="6" x2="24" y2="28" stroke="currentColor" stroke-width="0.8" stroke-dasharray="3,3"/>
+                </svg>
+                <span>Imagen del proyecto</span>
+              </div>
+            </div>
+          </div>
+          <div class="arq-project-info">
+            <div>
+              <div class="arq-project-meta">
+                <span class="arq-project-index">04 / 04</span>
+                <span class="arq-project-tag">Habitacional</span>
+              </div>
+              <h3 class="arq-project-title">Hacienda</h3>
+              <p class="arq-project-subtitle">
+                Proyecto de vivienda que dialoga con la arquitectura vernácula
+                y los materiales regionales. Espacios interiores que responden
+                al clima y al carácter del lugar.
+              </p>
+              <!-- PLACEHOLDER: Texto del proyecto — editar con contenido real -->
+              <div class="project-text-section">
+                <div class="project-text-grid">
+                  <span class="project-text-label">Proceso</span>
+                  <div class="project-text-content">
+                    <p>[Describe aquí el proceso de diseño: análisis del sitio, referentes, decisiones formales y aprendizajes del proyecto.]</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="arq-project-details">
+              <div class="arq-detail"><strong>Tipo</strong>Vivienda</div>
+              <div class="arq-detail"><strong>Énfasis</strong>Arquitectura vernácula</div>
+            </div>
+          </div>
+        </article><!-- /hacienda -->
+
+      </div><!-- /arq-grid -->
+    </div>
+  </section><!-- /arquitectura -->
+
+
+  <!-- ================================================================
+       SECCIÓN 6 — DESARROLLO WEB
+       Proyectos digitales. IVOX como destacado.
+  ================================================================ -->
+  <section id="web" aria-label="Proyectos digitales">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <div class="section-header-left">
+          <p class="eyebrow">Desarrollo web</p>
+          <h2>Proyectos<br>Digitales</h2>
+          <p>Sitios web, herramientas interactivas y recorridos virtuales para arquitectura y negocios.</p>
+        </div>
+      </div>
+
+      <div class="web-grid">
+
+        <!-- ── PROYECTO DESTACADO: IVOX ─────────────────────── -->
+        <article class="web-card featured reveal">
+          <span class="web-card-num">— Proyecto destacado</span>
+          <h3 class="web-card-title">IVOX Studio</h3>
+          <span class="web-card-url">ivox.com.mx</span>
+          <p class="web-card-desc">
+            Estudio digital fundado en 2024. Más de 10 proyectos entregados:
+            sistemas de punto de venta, inventarios, reservaciones y sitios
+            corporativos para negocios y despachos en CDMX.
+            Diseño con enfoque en conversión y comunicación clara.
+          </p>
+          <div class="web-tags">
+            <span class="web-tag">PHP</span>
+            <span class="web-tag">JavaScript</span>
+            <span class="web-tag">Node.js</span>
+            <span class="web-tag">UI/UX</span>
+            <span class="web-tag">SEO</span>
+          </div>
+          <a href="https://ivox.com.mx" target="_blank" rel="noopener" class="web-card-link">
+            Visitar sitio
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M1 6h10M7 2l4 4-4 4" stroke="currentColor" stroke-width="1.2"/>
+            </svg>
+          </a>
+        </article>
+
+        <!-- ── WEB: Recorrido Virtual ─────────────────────────── -->
+        <article class="web-card reveal reveal-delay-1">
+          <span class="web-card-num">02</span>
+          <h3 class="web-card-title">Recorrido Virtual UMF</h3>
+          <span class="web-card-url">WebXR / A-Frame</span>
+          <p class="web-card-desc">
+            Recorrido arquitectónico en primera persona para la Clínica ISSSTE.
+            Corre en el navegador sin instalaciones. Herramienta de presentación
+            para comités y clientes institucionales.
+          </p>
+          <div class="web-tags">
+            <span class="web-tag">A-Frame</span>
+            <span class="web-tag">WebXR</span>
+            <span class="web-tag">3D</span>
+          </div>
+          <a href="https://octaviovr5.github.io/UMF-ISSSTE/issste/" target="_blank" rel="noopener" class="web-card-link">
+            Ver proyecto
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M1 6h10M7 2l4 4-4 4" stroke="currentColor" stroke-width="1.2"/>
+            </svg>
+          </a>
+        </article>
+
+        <!-- ── WEB: Calculadora Cross ─────────────────────────── -->
+        <article class="web-card reveal reveal-delay-2">
+          <span class="web-card-num">03</span>
+          <h3 class="web-card-title">Calculadora Método Cross</h3>
+          <span class="web-card-url">Herramienta estructural</span>
+          <p class="web-card-desc">
+            Calculadora interactiva para distribución de momentos.
+            Tablas de iteración dinámicas, diagramas con Chart.js y
+            exportación a PDF. Ingeniería + código.
+          </p>
+          <div class="web-tags">
+            <span class="web-tag">JavaScript</span>
+            <span class="web-tag">Chart.js</span>
+            <span class="web-tag">PDF</span>
+          </div>
+          <!-- Enlace placeholder -->
+          <span class="web-card-link" style="opacity:0.4;cursor:default;">Próximamente</span>
+        </article>
+
+        <!-- ── WEB: Slot para agregar más proyectos ────────────── -->
+        <!-- PLACEHOLDER: Duplica este bloque para agregar nuevos proyectos web -->
+        <!--
+        <article class="web-card">
+          <span class="web-card-num">04</span>
+          <h3 class="web-card-title">[Nombre del proyecto]</h3>
+          <span class="web-card-url">[URL o tipo]</span>
+          <p class="web-card-desc">[Descripción del proyecto]</p>
+          <div class="web-tags">
+            <span class="web-tag">[Tecnología]</span>
+          </div>
+          <a href="#" class="web-card-link">Ver proyecto →</a>
+        </article>
+        -->
+
+      </div><!-- /web-grid -->
+    </div>
+  </section><!-- /web -->
+
+
+  <!-- ================================================================
+       SECCIÓN 7 — SIMULADOR (proyecto personal)
+       Fondo oscuro, canvas animado con estructura estructural.
+  ================================================================ -->
+  <section id="simulador" aria-label="Simulador de estructuras">
+    <div class="sim-noise"     aria-hidden="true"></div>
+    <div class="sim-grid-bg"   aria-hidden="true"></div>
+    <div class="container">
+      <div class="sim-inner">
+
+        <!-- Texto -->
+        <div class="reveal">
+          <p class="sim-eyebrow">Proyecto personal en desarrollo</p>
+          <h2 class="sim-title">
+            Simulador de<br>
+            <em>estructuras</em>
+          </h2>
+          <p class="sim-body">
+            Actualmente desarrollo un simulador de estructuras como proyecto personal
+            que combina arquitectura y programación. El objetivo es crear una herramienta
+            digital educativa para comprender de forma visual el comportamiento estructural.
+          </p>
+
+          <ul class="sim-features" role="list">
+            <li class="sim-feature">
+              <div class="sim-feature-icon" aria-hidden="true"></div>
+              <span><strong>Modelado 3D</strong> con Three.js y posicionamiento métrico libre</span>
+            </li>
+            <li class="sim-feature">
+              <div class="sim-feature-icon" aria-hidden="true"></div>
+              <span><strong>Validación estructural</strong> según ACI 318 y NTC México</span>
+            </li>
+            <li class="sim-feature">
+              <div class="sim-feature-icon" aria-hidden="true"></div>
+              <span><strong>Editor de armado</strong> (refuerzo de acero en elementos)</span>
+            </li>
+            <li class="sim-feature">
+              <div class="sim-feature-icon" aria-hidden="true"></div>
+              <span><strong>Sin servidor</strong> — guardado local con IndexedDB</span>
+            </li>
+            <li class="sim-feature">
+              <div class="sim-feature-icon" aria-hidden="true"></div>
+              <span><strong>Memoria de cálculo</strong> con desglose de costos por ciudad</span>
+            </li>
+          </ul>
+
+          <div class="sim-status">
+            <div class="sim-status-dot" aria-hidden="true"></div>
+            En desarrollo activo
+          </div>
+        </div>
+
+        <!-- Canvas — diagrama estructural animado -->
+        <div class="reveal reveal-delay-2">
+          <div class="sim-visual">
+            <div class="sim-visual-grid" aria-hidden="true"></div>
+            <canvas id="sim-canvas" role="img" aria-label="Diagrama estructural animado del simulador"></canvas>
+            <span class="sim-canvas-label" aria-hidden="true">CivilCraft IVOX — preview</span>
+          </div>
+        </div>
+
+      </div><!-- /sim-inner -->
+    </div>
+  </section><!-- /simulador -->
+
+
+  <!-- ================================================================
+       SECCIÓN 8 — SOBRE MÍ
+       Texto humano + stats animados + habilidades
+  ================================================================ -->
+  <section id="sobre" aria-label="Sobre mí">
+    <div class="container">
+
+      <div class="sobre-grid">
+
+        <!-- Columna principal -->
+        <div>
+          <p class="eyebrow reveal">Sobre mí</p>
+          <h2 class="sobre-title reveal reveal-delay-1">
+            Arquitecto en formación<br>
+            y desarrollador <em>web.</em>
+          </h2>
+          <p class="sobre-body reveal reveal-delay-2">
+            Soy Octavio Velázquez, estudiante de Arquitectura en último cuatrimestre
+            y fundador de IVOX, un estudio digital en CDMX.
+            Me apasiona la tecnología, el diseño y la comunicación de proyectos.
+          </p>
+          <p class="sobre-body reveal reveal-delay-2">
+            Estudio simultáneamente Arquitectura e Ingeniería en Desarrollo de Software
+            porque creo que el futuro de los despachos es híbrido: espacios bien diseñados
+            y bien comunicados.
+          </p>
+
+          <!-- Stats con conteo animado -->
+          <div class="sobre-stats reveal reveal-delay-3">
+            <div class="stat-item">
+              <div class="stat-num">
+                <span data-count="10">0</span>
+                <span class="stat-plus">+</span>
+              </div>
+              <p class="stat-label">Proyectos web entregados</p>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">
+                <span data-count="2">0</span>
+              </div>
+              <p class="stat-label">Carreras en curso</p>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">
+                <span data-count="1">0</span>
+              </div>
+              <p class="stat-label">Simulador en desarrollo</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna de habilidades -->
+        <div class="sobre-skills-col reveal reveal-delay-2">
+
+          <div class="sobre-skills-section">
+            <p class="sobre-skills-label">Arquitectura</p>
+            <div class="sobre-skill-pills">
+              <span class="skill-pill">AutoCAD</span>
+              <span class="skill-pill">Revit</span>
+              <span class="skill-pill">SketchUp</span>
+              <span class="skill-pill">Lumion</span>
+              <span class="skill-pill">Diseño bioclimático</span>
+            </div>
+          </div>
+
+          <div class="sobre-skills-section" style="margin-top:1.5rem;">
+            <p class="sobre-skills-label">Comunicación & Diseño</p>
+            <div class="sobre-skill-pills">
+              <span class="skill-pill">Redacción técnica</span>
+              <span class="skill-pill">Photoshop</span>
+              <span class="skill-pill">UX / UI</span>
+              <span class="skill-pill">A-Frame / WebXR</span>
+            </div>
+          </div>
+
+          <div class="sobre-skills-section" style="margin-top:1.5rem;">
+            <p class="sobre-skills-label">Tecnología</p>
+            <div class="sobre-skill-pills">
+              <span class="skill-pill">HTML / CSS</span>
+              <span class="skill-pill">JavaScript</span>
+              <span class="skill-pill">PHP</span>
+              <span class="skill-pill">Node.js</span>
+              <span class="skill-pill">Three.js</span>
+              <span class="skill-pill">Git</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div><!-- /sobre-grid -->
+    </div>
+  </section><!-- /sobre -->
+
+
+  <!-- ================================================================
+       SECCIÓN 9 — CONTACTO
+       Formulario + datos de contacto
+  ================================================================ -->
+  <section id="contacto" aria-label="Contacto">
+    <div class="container">
+
+      <div class="contacto-grid">
+
+        <!-- Info de contacto -->
+        <div class="reveal">
+          <p class="eyebrow">Hablemos</p>
+          <h2 class="contacto-info-title">
+            ¿Tienes un<br>proyecto en<br><em>mente?</em>
+          </h2>
+          <p class="contacto-info-text">
+            Estoy disponible para colaboraciones, prácticas en despachos
+            y proyectos que combinen arquitectura y tecnología.
+            No dudes en escribirme.
+          </p>
+
+          <div class="contacto-details">
+            <div class="contacto-detail">
+              <span class="contacto-detail-icon">✉</span>
+              <div class="contacto-detail-content">
+                <strong>Correo</strong>
+                <!-- Reemplaza con tu correo real -->
+                <a href="mailto:tu@correo.com">OctavioVel@ivox.com.mx</a>
+              </div>
+            </div>
+            <div class="contacto-detail">
+              <span class="contacto-detail-icon">☎</span>
+              <div class="contacto-detail-content">
+                <strong>Teléfono</strong>
+                <a href="tel:5538779869">56 4896 7642</a>
+              </div>
+            </div>
+            <div class="contacto-detail">
+              <span class="contacto-detail-icon">⌘</span>
+              <div class="contacto-detail-content">
+                <strong>GitHub</strong>
+                <a href="https://github.com/octaviovr5" target="_blank" rel="noopener">
+                  github.com/octaviovr5
+                </a>
+              </div>
+            </div>
+            <div class="contacto-detail">
+              <span class="contacto-detail-icon">in</span>
+              <div class="contacto-detail-content">
+                <strong>LinkedIn</strong>
+                <!-- Reemplaza con tu URL de LinkedIn -->
+                <a href="https://linkedin.com" target="_blank" rel="noopener">
+                  linkedin.com/in/octaviovelazquez
+                </a>
+              </div>
+            </div>
+            <div class="contacto-detail">
+              <span class="contacto-detail-icon">⬡</span>
+              <div class="contacto-detail-content">
+                <strong>Estudio digital</strong>
+                <a href="https://ivox.com.mx" target="_blank" rel="noopener">ivox.com.mx</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Formulario -->
+        <div class="reveal reveal-delay-2">
+          <form id="contact-form" novalidate>
+
+            <div class="form-group">
+              <label for="contact-name">Nombre</label>
+              <input type="text" id="contact-name" name="name"
+                     placeholder="Tu nombre completo" required autocomplete="name">
+            </div>
+
+            <div class="form-group">
+              <label for="contact-email">Correo electrónico</label>
+              <input type="email" id="contact-email" name="email"
+                     placeholder="tu@correo.com" required autocomplete="email">
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message">Mensaje</label>
+              <textarea id="contact-message" name="message"
+                        placeholder="Cuéntame sobre tu proyecto o idea…" required></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary" style="animation:none;opacity:1;">
+              <span>Enviar mensaje</span>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.2"/>
+              </svg>
+            </button>
+
+            <!-- Para conectar EmailJS:
+              1. Añade el SDK de EmailJS en el <head>
+              2. Inicializa con tu Public Key
+              3. En main.js sustituye el setTimeout por emailjs.sendForm(...)
+            -->
+
+          </form>
+        </div>
+
+      </div><!-- /contacto-grid -->
+    </div>
+  </section><!-- /contacto -->
+
+
+  <!-- ================================================================
+       FOOTER
+       Firma tipográfica grande + links
+  ================================================================ -->
+  <footer role="contentinfo">
+    <div class="container">
+
+      <!-- Nombre como firma de marca -->
+      <div class="footer-name" aria-hidden="true">OV</div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          © 2025 Octavio Velázquez Ramírez &nbsp;·&nbsp; Ciudad de México
+        </p>
+        <nav class="footer-links" aria-label="Links footer">
+          <a href="https://github.com/octaviovr5"  target="_blank" rel="noopener">GitHub</a>
+          <a href="https://linkedin.com"            target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://ivox.com.mx"             target="_blank" rel="noopener">IVOX</a>
+          <a href="#hero">↑ Arriba</a>
+        </nav>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ── SCRIPTS ────────────────────────────────────────────────── -->
+  <script src="js/main.js" defer></script>
+
+</body>
+</html>
