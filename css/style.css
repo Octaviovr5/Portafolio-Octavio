@@ -1453,38 +1453,79 @@ footer {
   #cursor, #cursor-dot { display: none; }
 }
 
-@media (max-width: 600px) {
-  .nav-links { display: none; }
-  .nav-hamburger { display: flex; }
-  .sobre-stats { grid-template-columns: 1fr; }
-  .proyecto-text-grid { grid-template-columns: 1fr; }
-  .proceso-steps { grid-template-columns: 1fr; }
-  .arq-gallery-placeholder { grid-template-columns: repeat(2, 1fr); }
+@media (max-width:600px){
+
+  .nav-links{
+    display:flex;
+    flex-direction:column;
+    position:fixed;
+    inset:0;
+    background:var(--bg);
+    align-items:center;
+    justify-content:center;
+    gap:32px;
+    z-index:99;
+
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(-20px);
+    transition:
+      opacity .35s ease,
+      transform .35s ease,
+      visibility .35s;
+
+    will-change: transform, opacity;
+    transform: translate3d(0,-18px,0);
+  }
+
+  .nav-open .nav-links{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+  }
+
+  .nav-hamburger{
+    display:flex;
+  }
+
+  body.nav-open{
+    overflow:hidden;
+  }
 }
 
-/* Mobile menu open */
-.nav-open .nav-links {
-  display: flex;
+/* Overlay para cerrar al tocar fuera */
+.nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 98;
+}
+.nav-open .nav-overlay { display: block; }
+
+/* Botón X dentro del menú */
+.nav-close {
+  position: fixed;
+  top: 18px;
+  right: var(--gutter);
+  z-index: 100;
+  display: none;
   flex-direction: column;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: var(--bg);
-  align-items: center;
-  justify-content: center;
-  gap: 32px;
-  z-index: 99;
-  overflow: hidden;
+  gap: 0;
+  padding: 8px;
+  cursor: none;
+}
+.nav-open .nav-close { display: flex; }
+.nav-close span {
+  display: block;
+  width: 22px; height: 1px;
+  background: var(--ink);
+}
+.nav-close span:first-child { transform: rotate(45deg) translate(0px, 0.5px); }
+.nav-close span:last-child  { transform: rotate(-45deg) translate(0px, -0.5px); }
+.nav-links{
+  will-change: transform, opacity;
 }
 
-.nav-open {
-  overflow: hidden;
-  position: fixed;
-  width: 100%;
-}
-.nav-open .nav-links a {
-  font-size: 1rem;
-  letter-spacing: 0.1em;
+body.nav-open{
+  overflow:hidden;
 }

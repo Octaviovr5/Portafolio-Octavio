@@ -62,41 +62,56 @@
 
 /* ── NAVEGACIÓN ──────────────────────────────────────────────── */
 (function initNav() {
-  const nav  = document.getElementById('nav');
-  const ham  = document.getElementById('hamburger');
-  const body = document.body;
+  const nav     = document.getElementById('nav');
+  const ham     = document.getElementById('hamburger');
+  const overlay = document.getElementById('nav-overlay');
+  const closeBtn= document.getElementById('nav-close');
+  const body    = document.body;
 
-  // Scroll state
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 40);
   }, { passive: true });
 
-  // Mobile menu
-  ham && ham.addEventListener('click', () => {
-    body.classList.toggle('nav-open');
-    const open = body.classList.contains('nav-open');
-    ham.setAttribute('aria-expanded', open);
-    // Animar líneas del hamburger
-    const spans = ham.querySelectorAll('span');
-    if (open) {
-      spans[0].style.transform = 'rotate(45deg) translate(4px, 4px)';
-      spans[1].style.opacity   = '0';
-      spans[2].style.transform = 'rotate(-45deg) translate(4px, -4px)';
-    } else {
-      spans.forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
-    }
-  });
+ let scrollPosition = 0;
 
-  // Cerrar al hacer click en enlace del menú móvil
+function openMenu() {
+  scrollPosition = window.scrollY;
+
+  requestAnimationFrame(() => {
+
+  body.classList.add('nav-open');
+
+  body.style.position = 'fixed';
+  body.style.top = `-${scrollPosition}px`;
+  body.style.left = '0';
+  body.style.right = '0';
+  body.style.width = '100%';
+
+  ham?.setAttribute('aria-expanded', 'true');
+  });
+}
+
+function closeMenu() {
+  body.classList.remove('nav-open');
+
+  body.style.position = '';
+  body.style.top = '';
+  body.style.left = '';
+  body.style.right = '';
+  body.style.width = '';
+
+  window.scrollTo(0, scrollPosition);
+
+  ham?.setAttribute('aria-expanded', 'false');
+}
+
+  ham     && ham.addEventListener('click', openMenu);
+  overlay && overlay.addEventListener('click', closeMenu);
+  closeBtn && closeBtn.addEventListener('click', closeMenu);
+
+  // Cerrar al elegir una opción
   document.querySelectorAll('.nav-links a').forEach(a => {
-    a.addEventListener('click', () => {
-      body.classList.remove('nav-open');
-      if (ham) {
-        ham.querySelectorAll('span').forEach(s => {
-          s.style.transform = ''; s.style.opacity = '';
-        });
-      }
-    });
+    a.addEventListener('click', closeMenu);
   });
 })();
 
