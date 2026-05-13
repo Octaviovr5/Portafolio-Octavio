@@ -1467,12 +1467,22 @@ footer {
   display: flex;
   flex-direction: column;
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: var(--bg);
   align-items: center;
   justify-content: center;
   gap: 32px;
   z-index: 99;
+  overflow: hidden;
+}
+
+.nav-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
 }
 .nav-open .nav-links a {
   font-size: 1rem;
