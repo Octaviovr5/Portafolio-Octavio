@@ -44,19 +44,56 @@
 
 /* ── TEMA OSCURO / CLARO ─────────────────────────────────────── */
 (function initTheme() {
-  const toggle = document.getElementById('theme-toggle');
-  const saved  = localStorage.getItem('ov-theme');
-  const prefers = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
+  const toggle   = document.getElementById('theme-toggle');
+  const saved    = localStorage.getItem('ov-theme');
+  const prefers  = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  // META TAG del navegador
+  const themeMeta = document.querySelector('meta[name="theme-color"]');
+
+  // Función para cambiar color de barra navegador
+  function updateThemeColor(theme) {
+
+    if (!themeMeta) return;
+
+    if (theme === 'dark') {
+
+      // Color modo oscuro
+      themeMeta.setAttribute('content', '#0f0f0f');
+
+    } else {
+
+      // Color modo claro
+      themeMeta.setAttribute('content', '#f5f3ef');
+
+    }
+  }
+
+  // Tema inicial
   if (saved === 'dark' || (!saved && prefers)) {
     document.documentElement.dataset.theme = 'dark';
   }
 
+  // Aplicar color al cargar
+  updateThemeColor(document.documentElement.dataset.theme || 'light');
+
+  // Toggle tema
   toggle && toggle.addEventListener('click', () => {
+
     const isDark = document.documentElement.dataset.theme === 'dark';
-    document.documentElement.dataset.theme = isDark ? 'light' : 'dark';
-    localStorage.setItem('ov-theme', isDark ? 'light' : 'dark');
+
+    const newTheme = isDark ? 'light' : 'dark';
+
+    document.documentElement.dataset.theme = newTheme;
+
+    localStorage.setItem('ov-theme', newTheme);
+
+    // Cambiar barra navegador
+    updateThemeColor(newTheme);
+
   });
+
 })();
 
 
